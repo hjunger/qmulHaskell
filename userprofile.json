@@ -92,7 +92,7 @@
     ],
     "greeting": "Hello, Kimberley! You have 9 unread messages.",
     "favoriteFruit": "apple"
-  },
+  }/*,
   {
     "_id": "5638b7d388b18f877dbdb74d",
     "index": 2,
@@ -233,5 +233,5 @@
     ],
     "greeting": "Hello, Chandler! You have 10 unread messages.",
     "favoriteFruit": "strawberry"
-  }
+  } */
 ]

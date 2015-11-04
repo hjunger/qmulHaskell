@@ -4,7 +4,7 @@ import Data.Char
 j = readFile "userprofile.json"
 
 data User = User {
-					id::String,
+					_id::String,
 					index::Int, 
 					isActive::Bool,
 					balance::String,
@@ -89,6 +89,48 @@ getSomeInfo "" _ _ = ""
 getSomeInfo sth stComp chFin = let st = strip sth stComp in take (myIndex st chFin) st
 
 createUser::String->Int->Bool->String->String->Int->String->String->String->User
-createUser i idx act bal pic ag ec com em = User i idx act bal pic ag ec com em
+createUser i idx act bal pic ag ec com em = User {
+													_id=i,
+													index=idx,
+													isActive=act,
+													balance=bal,
+													picture=pic,
+													age=ag,
+													eyeColor=ec,
+													company=com,
+													email=em
+												}
+user1 = createUser "5638b7d3b72286f9bee44e15" 0 True "$1,358.10" "Pricture" 25 "Brown" "Qmul" "victor@qmul.ac.uk"
+user2 = createUser "5638b7d30b94173ecb742338" 0 True "$2,000.10" "Pricture" 29 "Black" "Qmul" "henrique@qmul.ac.uk"
+
+
+haskellToXml::[User]->String
+haskellToXml [] = ""
+haskellToXml (x:xs) = "<User>\n"++
+						"<id>" ++ _id x ++ "</id>\n"++
+						--"<name> <first>"++first x++"</first> <last>"++last x++"</last></name>\n"
+						"<index>"++ show (index x) ++ "</index>\n"++
+						"<isActive>"++ show (isActive x) ++ "</isActive>\n"++
+						"<balance>"++ balance x ++ "</balance>\n"++
+						"<picture>"++ picture x ++ "</picture>\n"++
+						"<age>"++ show (age x) ++ "</age>\n"++
+						"<eyeColor>"++ eyeColor x ++ "</eyeColor>\n"++
+						"<company>"++ company x ++ "</company>\n"++
+						"<email>"++ email x ++ "</email>\n"++
+						--"<phone>"++ phone x ++ "</phone>\n"++
+						--"<address>"++ address x ++ "</address>\n"++
+						--"<registered>"++ registered x ++ "</registered>\n"++
+						--"<latitude>"++ latitude x ++ "</latitude>\n"++
+						--"<longitude>"++ longitude x ++ "</longitude>\n"++
+						--"<greeting>"++ greeting x ++ "</greeting>\n"++
+						--"<favoriteFruit>"++ favoriteFruit x ++ "</favoriteFruit>\n"++
+					  "</User>" ++ haskellToXml xs
+
+
+
+
+
+
+
 
 

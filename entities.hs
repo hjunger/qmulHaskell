@@ -1,9 +1,6 @@
 module Entites where
 
 
-
-	
-
 data Name = {
 				first::String,
 				last::String

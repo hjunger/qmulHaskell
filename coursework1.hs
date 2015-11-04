@@ -5,6 +5,8 @@
 -- processFile processJson "userprofile.json" "teste.xml"
 
 --import Entites
+
+
 import Data.Char
 import Data.List
 
@@ -97,6 +99,20 @@ getBeginWith (a:as) x = if (take (length x) a) == x then a else getBeginWith as 
 getSomeInfo::String->String->Char->String
 getSomeInfo "" _ _ = ""
 getSomeInfo sth stComp chFin = let st = strip sth stComp in if (last st) == chFin then init st else st
+
+getFirstName::Name->String
+getFirstName (Name firstName _) = firstName
+
+getName::Name->String
+getName (Name firstName _) = firstName
+
+getLastName::Name->String
+getLastName (Name _ lastName) = lastName
+
+getFriends::[Friend]->String
+getFriends [] = ""
+getFriends (x:xs) = "<friend> <id>" ++ show (idFriend x) ++ 
+					"</id> "++ "<name>"++ nameFriend x ++ "</name> </friend>" ++ getFriends(xs)
 
 listBreak :: (a -> Bool) -> [a] -> [[a]]
 listBreak pred [] = []
@@ -218,7 +234,7 @@ haskellToXml::[User]->String
 haskellToXml [] = ""
 haskellToXml (x:xs) = "<User>\n"++
 						"<id>" ++ _id x ++ "</id>\n"++
-						--"<name> <first>"++first x++"</first> <last>"++last x++"</last></name>\n"
+						"<name> <first>" ++ getFirstName (name x) ++ "</first>"++"<last>" ++ getLastName (name x)++ "</last> </name>\n"++
 						"<index>"++ show (index x) ++ "</index>\n"++
 						"<isActive>"++ show (isActive x) ++ "</isActive>\n"++
 						"<balance>"++ balance x ++ "</balance>\n"++
@@ -232,8 +248,7 @@ haskellToXml (x:xs) = "<User>\n"++
 						"<registered>"++ registered x ++ "</registered>\n"++
 						"<latitude>"++ latitude x ++ "</latitude>\n"++
 						"<longitude>"++ longitude x ++ "</longitude>\n"++
+						"<friends>"++ getFriends (friends x) ++ "</friends>\n"++
 						"<greeting>"++ greeting x ++ "</greeting>\n"++
 						"<favoriteFruit>"++ favoriteFruit x ++ "</favoriteFruit>\n"++
 					  "</User>" ++ haskellToXml xs
-
-

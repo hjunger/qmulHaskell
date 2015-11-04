@@ -21,10 +21,17 @@
     "latitude": "-20.331931",
     "longitude": "-50.619251",
     "friends": [
-      3,
       {
         "id": 1,
-        "name": "Lopez Cruz"
+        "name": "Rafael Nadal"
+      },
+      {
+        "id": 2,
+        "name": "Novak Djokovic"
+      },
+      {
+        "id": 3,
+        "name": "Roger Federer"
       }
     ],
     "greeting": "Hello, Tammy! You have 6 unread messages.",
@@ -52,7 +59,6 @@
     "latitude": "-85.863845",
     "longitude": "-23.017466",
     "friends": [
-      3,
       {
         "id": 1,
         "name": "Lopez Cruz"
@@ -60,7 +66,7 @@
     ],
     "greeting": "Hello, Kimberley! You have 9 unread messages.",
     "favoriteFruit": "apple"
-  }/*,
+  },
   {
     "_id": "5638b7d388b18f877dbdb74d",
     "index": 2,
@@ -82,24 +88,7 @@
     "registered": "Sunday, October 19, 2014 6:02 PM",
     "latitude": "-69.663515",
     "longitude": "146.022985",
-    "tags": [
-      7,
-      "do"
-    ],
-    "range": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
     "friends": [
-      3,
       {
         "id": 1,
         "name": "Lopez Cruz"
@@ -129,24 +118,7 @@
     "registered": "Sunday, March 30, 2014 3:12 AM",
     "latitude": "43.50553",
     "longitude": "-36.963036",
-    "tags": [
-      7,
-      "do"
-    ],
-    "range": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
     "friends": [
-      3,
       {
         "id": 1,
         "name": "Lopez Cruz"
@@ -176,24 +148,7 @@
     "registered": "Tuesday, January 27, 2015 10:12 PM",
     "latitude": "-64.39048",
     "longitude": "-151.252689",
-    "tags": [
-      7,
-      "do"
-    ],
-    "range": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
     "friends": [
-      3,
       {
         "id": 1,
         "name": "Lopez Cruz"
@@ -201,5 +156,5 @@
     ],
     "greeting": "Hello, Chandler! You have 10 unread messages.",
     "favoriteFruit": "strawberry"
-  } */
+  }
 ]

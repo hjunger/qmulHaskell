@@ -1,0 +1,86 @@
+<User>
+<id>5638b7d3b72286f9bee44e15</id>
+<index>0</index>
+<isActive>False</isActive>
+<balance>$1,358.10</balance>
+<picture>http://placehold.it/32x32</picture>
+<age>22</age>
+<eyeColor>brown</eyeColor>
+<company>GLEAMINK</company>
+<email>tammy.sharpe@gleamink.co.uk</email>
+<phone>+1 (827) 533-2929</phone>
+<address>837 Olive Street, Orin, Missouri, 3051</address>
+<registered>Wednesday, December 24, 2014 5:38 PM</registered>
+<latitude>-20.331931</latitude>
+<longitude>-50.619251</longitude>
+<greeting>Hello, Tammy! You have 6 unread messages.</greeting>
+<favoriteFruit>apple</favoriteFruit>
+</User><User>
+<id>5638b7d30b94173ecb742338</id>
+<index>1</index>
+<isActive>False</isActive>
+<balance>$3,327.39</balance>
+<picture>http://placehold.it/32x32</picture>
+<age>32</age>
+<eyeColor>green</eyeColor>
+<company>SCENTY</company>
+<email>kimberley.randall@scenty.org</email>
+<phone>+1 (851) 416-3404</phone>
+<address>333 Pine Street, Harrison, Massachusetts, 6783</address>
+<registered>Thursday, July 24, 2014 5:04 PM</registered>
+<latitude>-85.863845</latitude>
+<longitude>-23.017466</longitude>
+<greeting>Hello, Kimberley! You have 9 unread messages.</greeting>
+<favoriteFruit>apple</favoriteFruit>
+</User><User>
+<id>5638b7d388b18f877dbdb74d</id>
+<index>2</index>
+<isActive>True</isActive>
+<balance>$2,046.09</balance>
+<picture>http://placehold.it/32x32</picture>
+<age>35</age>
+<eyeColor>blue</eyeColor>
+<company>COMVEYOR</company>
+<email>tabatha.daniel@comveyor.com</email>
+<phone>+1 (815) 456-3002</phone>
+<address>260 John Street, Manitou, Arkansas, 982</address>
+<registered>Sunday, October 19, 2014 6:02 PM</registered>
+<latitude>-69.663515</latitude>
+<longitude>146.022985</longitude>
+<greeting>Hello, Tabatha! You have 10 unread messages.</greeting>
+<favoriteFruit>apple</favoriteFruit>
+</User><User>
+<id>5638b7d32b8e19532276f790</id>
+<index>3</index>
+<isActive>False</isActive>
+<balance>$1,294.78</balance>
+<picture>http://placehold.it/32x32</picture>
+<age>32</age>
+<eyeColor>brown</eyeColor>
+<company>PROSURE</company>
+<email>amanda.patton@prosure.me</email>
+<phone>+1 (877) 466-3230</phone>
+<address>590 Hausman Street, Mansfield, Virginia, 1501</address>
+<registered>Sunday, March 30, 2014 3:12 AM</registered>
+<latitude>43.50553</latitude>
+<longitude>-36.963036</longitude>
+<greeting>Hello, Amanda! You have 7 unread messages.</greeting>
+<favoriteFruit>strawberry</favoriteFruit>
+</User><User>
+<id>5638b7d31d11f162ac497617</id>
+<index>4</index>
+<isActive>True</isActive>
+<balance>$3,765.21</balance>
+<picture>http://placehold.it/32x32</picture>
+<age>32</age>
+<eyeColor>green</eyeColor>
+<company>MEMORA</company>
+<email>chandler.walls@memora.ca</email>
+<phone>+1 (997) 580-2158</phone>
+<address>392 Frank Court, Iola, North Carolina, 4521</address>
+<registered>Tuesday, January 27, 2015 10:12 PM</registered>
+<latitude>-64.39048</latitude>
+<longitude>-151.252689</longitude>
+<greeting>Hello, Chandler! You have 10 unread messages.</greeting>
+<favoriteFruit>strawberry</favoriteFruit>
+</User>

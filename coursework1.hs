@@ -2,7 +2,7 @@
 -- Group: Victor Benning and Henrique Junger
 
 -- To generate the XML, just run the follow command:
--- processFile processJson "userprofile.json" "teste.xml"
+-- convertJsonToXml "userprofile.json" "teste.xml"
 
 --import Entites
 
@@ -188,19 +188,36 @@ createUser i idx act bal pic ag ec n com em ph add abt reg lat lon friends gree 
 
 
 -- Functions to process the JSON
-processFile :: (String -> String) -> FilePath -> FilePath -> IO ()
-processFile process infile outfile = 
+convertJsonToXml :: FilePath -> FilePath -> IO ()
+convertJsonToXml infile outfile = 
   do 
     inf <- readFile infile
-    writeFile outfile (process inf)
+    writeFile outfile (processJson inf)
 
 processJson::String->String
 processJson json = 
+                    do
+                        let jsonList = concatClasses (removeCharList (trimJson (lines json)) '\"')
+                        let jsonListBreak = listBreak isBegin jsonList
+                        let users = processJsonList jsonListBreak
+                        haskellToXml users
+
+calculateAgeAverage :: FilePath -> IO()
+calculateAgeAverage infile = 
+                          do 
+                            inf <- readFile infile
+                            processJsonForAverageAge inf
+
+processJsonForAverageAge:: String ->IO()
+processJsonForAverageAge json = 
         do
             let jsonList = concatClasses (removeCharList (trimJson (lines json)) '\"')
             let jsonListBreak = listBreak isBegin jsonList
             let users = processJsonList jsonListBreak
-            haskellToXml users
+            let total = getTotalAge users
+            putStrLn (show (average total))
+
+            
 
 processJsonList::[[String]]->[User]
 processJsonList [] = []
@@ -254,3 +271,14 @@ haskellToXml (x:xs) = "<User>\n"++
                         "\t<greeting>"++ greeting x ++ "</greeting>\n"++
                         "\t<favoriteFruit>"++ favoriteFruit x ++ "</favoriteFruit>\n"++
                       "\r</User>\n" ++ haskellToXml xs
+
+
+
+getTotalAge::[User] -> [Int]
+getTotalAge [] = []
+getTotalAge (x:xs) = age x : getTotalAge xs 
+
+average :: (Real a, Fractional b) => [a] -> b
+average [] = 0
+average xs = realToFrac (sum xs) / genericLength xs
+

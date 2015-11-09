@@ -217,7 +217,11 @@ processJsonForAverageAge json =
             let total = getTotalAge users
             putStrLn (show (average total))
 
-            
+main =
+    do 
+        putStrLn("1 - Parse json to Xml")
+        putStrLn("2 - Average age for user on json")
+        let choice = getLine()
 
 processJsonList::[[String]]->[User]
 processJsonList [] = []

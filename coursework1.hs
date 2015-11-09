@@ -221,7 +221,11 @@ main =
     do 
         putStrLn("1 - Parse json to Xml")
         putStrLn("2 - Average age for user on json")
-        let choice = getLine()
+        choice <- getLine
+        if(coice = 1){
+            convertJsonToXml "userprofile.json" "teste.xml"
+            }
+            else if()
 
 processJsonList::[[String]]->[User]
 processJsonList [] = []

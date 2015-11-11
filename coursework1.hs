@@ -9,6 +9,7 @@
 
 import Data.Char
 import Data.List
+import Control.Monad
 
 --j = readFile "userprofile.json"
 
@@ -194,15 +195,30 @@ convertJsonToXml infile outfile =
     inf <- readFile infile
     writeFile outfile (processJson inf)
 
-{-
+calculateAverageFriends::FilePath->IO()
+calculateAverageFriends infile = 
+                    do
+                        inf <- readFile infile
+                        processJsonForAverageFriends inf
+                        
+
+processJsonForAverageFriends::String->IO()
+processJsonForAverageFriends json = 
+                    do
+                        let jsonList = concatClasses (removeCharList (trimJson (lines json)) '\"')
+                        let jsonListBreak = listBreak isBegin jsonList
+                        let users = processJsonList jsonListBreak
+                        let result = getAvaregeOfFriends users
+                        putStrLn (show result)
+
 getAvaregeOfFriends:: (Fractional a) => [User]-> a
 getAvaregeOfFriends [] = 0
-getAvaregeOfFriends users = (totalOfFriends users) / genericLength users
+getAvaregeOfFriends users = (realToFrac (totalOfFriends users)) / (realToFrac (length users))
 
-totalOfFriends::(Fractional a)=>[User]->a
+totalOfFriends::[User]->Int
 totalOfFriends [] = 0
-totalOfFriends (u:us) = realToFrac (length (friends u) + totalOfFriends us)
--}
+totalOfFriends (u:us) = length (friends u) + totalOfFriends us
+
 processJson::String->String
 processJson json = 
                     do
@@ -227,14 +243,23 @@ processJsonForAverageAge json =
             putStrLn (show (average total))
 
 main =
-    do 
-        putStrLn("1 - Parse json to Xml")
-        putStrLn("2 - Average age for user on json")
+    do
+        putStrLn "0 - EXIT" 
+        putStrLn "1 - Parse json to Xml"
+        putStrLn "2 - Average age for user on json"
+        putStrLn "3 - Average of friends on json"
         choice <- getLine
-        if(coice = 1){
-            convertJsonToXml "userprofile.json" "teste.xml"
-            }
-            else if()
+        let userChoice = read choice :: Int
+        when (userChoice > 0) $ do
+                callFunction userChoice
+
+callFunction::Int->IO()
+callFunction idx
+        | idx == 1 = convertJsonToXml jsonFile "convertedJson.xml"
+        | idx == 2 = calculateAgeAverage jsonFile
+        | idx == 3 = calculateAverageFriends jsonFile
+        where jsonFile = "userprofile.json"
+
 
 processJsonList::[[String]]->[User]
 processJsonList [] = []

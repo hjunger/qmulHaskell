@@ -10,7 +10,7 @@
 import Data.Char
 import Data.List
 
-j = readFile "userprofile.json"
+--j = readFile "userprofile.json"
 
 -- Data Types
 data Name = Name {
@@ -194,6 +194,15 @@ convertJsonToXml infile outfile =
     inf <- readFile infile
     writeFile outfile (processJson inf)
 
+{-
+getAvaregeOfFriends:: (Fractional a) => [User]-> a
+getAvaregeOfFriends [] = 0
+getAvaregeOfFriends users = (totalOfFriends users) / genericLength users
+
+totalOfFriends::(Fractional a)=>[User]->a
+totalOfFriends [] = 0
+totalOfFriends (u:us) = realToFrac (length (friends u) + totalOfFriends us)
+-}
 processJson::String->String
 processJson json = 
                     do
